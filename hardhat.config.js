@@ -3,11 +3,14 @@ require("dotenv").config()
 require("@nomiclabs/hardhat-etherscan")
 require("./tasks/block-number")
 require("hardhat-gas-reporter")
+require("solidity-coverage")
 
-const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || ""
-const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || ""
-const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
+const COINMARKETCAP_API_KEY =
+    process.env.COINMARKETCAP_API_KEY ||
+    "https://eth-goerli.alchemyapi.io/someapikey"
+const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "Key"
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "0xKey"
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "Key"
 
 module.exports = {
     defaultNetwork: "hardhat",
@@ -33,5 +36,6 @@ module.exports = {
         outputFile: "gas-report.txt",
         noColors: true,
         coinmarketcap: COINMARKETCAP_API_KEY,
+        token: "MATIC",
     },
 }

@@ -21,5 +21,6 @@ typechain-types
 cache
 artifacts
 
+# Testing
 gas-report.txt
-
+coverage.json
