@@ -15,7 +15,8 @@ async function main() {
         await verify(HungerGames.address, [])
     }
 
-    const currentValue = await HungerGames
+    const currentValue = await HungerGames.retrieve()
+    console.log(`Current number of people is ${currentValue}`)
 }
 
 async function verify(contractAddress, args) {

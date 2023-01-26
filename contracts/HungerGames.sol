@@ -27,6 +27,10 @@ contract HungerGames is Ownable, Timeable {
         address payable _receiver;
     }
 
+    function retrieve() public view returns (uint256) {
+        return peopleCount;
+    }
+
     function addPerson(
         uint _id,
         string memory _name,

@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
 require("@nomiclabs/hardhat-etherscan")
+require("./tasks/block-number")
 
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || ""
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || ""
@@ -17,7 +18,7 @@ module.exports = {
             chainId: 5,
         },
         localhost: {
-            url: "http://localhost:8545",
+            url: "http://127.0.0.1:8545/",
             chainId: 31337,
         },
     },
