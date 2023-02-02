@@ -3,27 +3,52 @@
 pragma solidity ^0.8.17;
 
 // 2. Imports
-
 // 3. Interfaces, Libraries, Contracts
-
-/* @title: "A superb Smart Contract"
- * @author: "My Name here"
- * @notice: "Super brief explanation of the contract"
- * @dev: "Super brief technical explanation"
+/* @title: "Hunger Games Smart Contract"
+ * @author: "Jean-Paul Laclau"
+ * @notice: "A contest between friends to loose weight"
+ * @dev: "The person who lost more weight will win the funds in the contract"
  */
-
 contract HungerGames {
     // Type Declarations
     // State variables
+
+    uint256 public peopleCount = 0;
+
+    mapping(uint => Person) public people;
+
+    struct Person {
+        uint _id;
+        uint _weight;
+        address payable _contestant;
+        //If you weight 105,51kg, it'll be 10551
+    }
+
     // Events
     // Modifiers
     // Functions Order:
     //// constructor
+
     //// receive
+
+    function addPerson(
+        uint _weight
+    ) public payable //If you weight 105,51kg, it'll be 10551
+    {
+        uint _id = peopleCount + 1;
+        address payable _contestant = payable(msg.sender);
+        people[peopleCount] = Person(_id, _weight, _contestant);
+        incrementCount();
+    }
+
     //// fallback
     //// external
     //// public
+
     //// internal
+    function incrementCount() internal {
+        peopleCount += 1;
+    }
     //// private
     //// view / pure
 }
