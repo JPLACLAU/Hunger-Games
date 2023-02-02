@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JPLACLAU/Hunger-Games">
-    <img src="images/clock-svgrepo-com.svg" alt="Logo" width="80" height="80">
+    <img src="images/balance-svgrepo-com.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Hunger Games Contract</h3>
@@ -80,9 +80,9 @@ This is a project regarding a SmartContract and a Front End web GUI to use as a 
 
 Here's why:
 
-- You are overweight and you know it. It does not matter where you are and how old are you, fitness is important in life.
-- You shouldn't be eating badly, eat healthy and do some exercise.
-- Using a Smart Contract to help you to lose weight while competing with your also overweight friends while you all enter the journey to become fit is pure fun and happiness.
+-   You are overweight and you know it. It does not matter where you are and how old are you, fitness is important in life.
+-   You shouldn't be eating badly, eat healthy and do some exercise.
+-   Using a Smart Contract to help you to lose weight while competing with your also overweight friends while you all enter the journey to become fit is pure fun and happiness.
 
 This project is in an early stage.
 Be very careful if you use this code for any purposes, I advise against it.
@@ -93,8 +93,8 @@ Be very careful if you use this code for any purposes, I advise against it.
 
 Built with these frameworks/libraries, add-ons/plugins will be added later
 
-- [![React][react.js]][react-url]
-- [![Solidity][soliditylang.org]][soliditylang-url]
+-   [![React][react.js]][react-url]
+-   [![Solidity][soliditylang.org]][soliditylang-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,11 +108,11 @@ Instructions will come when Testnet v1.0 is ready.
 
 There will be a list of things you need to use this amazing Smart Contract.
 
-- npm
+-   npm
 
-  ```sh
-  npm nothing here yet
-  ```
+    ```sh
+    npm nothing here yet
+    ```
 
 ### Installation
 
@@ -121,14 +121,14 @@ _Example on how to install/use will come in the future..._
 1. Goto [https://github.com/JPLACLAU/Hunger-Games](https://github.com/JPLACLAU/Hunger-Games)
 2. Clone the repo
 
-   ```sh
-   git clone https://github.com/JPLACLAU/Hunger-Games
-   ```
+    ```sh
+    git clone https://github.com/JPLACLAU/Hunger-Games
+    ```
 
 3. Coming soon...
-   ```sh
-   Coming soon...
-   ```
+    ```sh
+    Coming soon...
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,11 +146,11 @@ _For more examples, please refer to the [Documentation](https://github.com/JPLAC
 
 ## Features Roadmap
 
-- [x] Start the proyect
-- [ ]
-- [ ] Add additional stuff
-- [ ] Make the front-end beautiful.
-- [ ] Add moar stuff
+-   [x] Start the proyect
+-   [ ]
+-   [ ] Add additional stuff
+-   [ ] Make the front-end beautiful.
+-   [ ] Add moar stuff
 
 See the [open issues](https://github.com/JPLACLAU/Hunger-Games/issues) for a full list of proposed features (and known issues).
 
@@ -214,7 +214,7 @@ Project Link: [https://github.com/JPLACLAU/Hunger-Games](https://github.com/JPLA
 
 Thank you so much to.. no one yet! Be the first to collab!
 
-- [No one yet](https://no-one.com)
+-   [No one yet](https://no-one.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
