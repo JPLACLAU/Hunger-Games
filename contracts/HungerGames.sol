@@ -32,9 +32,9 @@ contract HungerGames {
     //// receive
 
     function addPerson(
-        uint _weight
-    ) public payable //If you weight 105,51kg, it'll be 10551
-    {
+        uint _weight //If you weight 105,51kg, it'll be 10551
+    ) public payable {
+        require(msg.value == 1000000000000000000);
         uint _id = peopleCount + 1;
         address payable _contestant = payable(msg.sender);
         people[peopleCount] = Person(_id, _weight, _contestant);
