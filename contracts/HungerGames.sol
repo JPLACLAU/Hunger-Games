@@ -13,7 +13,8 @@ contract HungerGames {
     // Type Declarations
     // State variables
 
-    uint256 public peopleCount = 0;
+    uint public peopleCount = 0;
+    uint public peopleAfterCount = 0;
 
     mapping(uint => Person) public people;
 
@@ -21,6 +22,15 @@ contract HungerGames {
         uint _id;
         uint _weight;
         address payable _contestant;
+        //If you weight 105,51kg, it'll be 10551
+    }
+
+    mapping(uint => PersonWeighed) public peopleWeighted;
+
+    struct PersonWeighed {
+        uint _idAfter;
+        uint _weightAfter;
+        address payable _contestantAfter;
         //If you weight 105,51kg, it'll be 10551
     }
 
@@ -41,6 +51,19 @@ contract HungerGames {
         incrementCount();
     }
 
+    function theWeighing(
+        uint _weightAfter //If you weight 105,51kg, it'll be 10551
+    ) public {
+        uint _idAfter = peopleAfterCount + 1;
+        address payable _contestantAfter = payable(msg.sender);
+        peopleWeighted[peopleAfterCount] = PersonWeighed(
+            _idAfter,
+            _weightAfter,
+            _contestantAfter
+        );
+        incrementAfterCount();
+    }
+
     //// fallback
     //// external
     //// public
@@ -51,6 +74,10 @@ contract HungerGames {
     //// internal
     function incrementCount() internal {
         peopleCount += 1;
+    }
+
+    function incrementAfterCount() internal {
+        peopleAfterCount += 1;
     }
 
     //// private
