@@ -10,65 +10,40 @@ pragma solidity ^0.8.17;
  * @dev: "The person who lost more weight will win the funds in the contract"
  */
 contract HungerGames {
-    // Type Declarations
-    // State variables
-
     uint public peopleCount = 0;
     uint public peopleAfterCount = 0;
 
     mapping(uint => Person) public people;
-
     struct Person {
         uint _id;
         uint _weight;
-        address payable _contestant;
-        //If you weight 105,51kg, it'll be 10551
+        address payable _competitor;
     }
 
     mapping(uint => PersonWeighed) public peopleWeighted;
-
     struct PersonWeighed {
         uint _idAfter;
         uint _weightAfter;
-        address payable _contestantAfter;
-        //If you weight 105,51kg, it'll be 10551
+        address payable _competitorAfter;
     }
 
-    // Events
-    // Modifiers
-    // Functions Order:
-    //// constructor
-
-    //// receive
-
-    function addPerson(
-        uint _weight //If you weight 105,51kg, it'll be 10551
-    ) public payable {
+    function addPerson(uint _weight) public payable {
         require(msg.value == 1000000000000000000);
         uint _id = peopleCount + 1;
-        address payable _contestant = payable(msg.sender);
-        people[peopleCount] = Person(_id, _weight, _contestant);
+        address payable _competitor = payable(msg.sender);
+        people[peopleCount] = Person(_id, _weight, _competitor);
         incrementCount();
     }
 
-    function theWeighing(
-        uint _weightAfter //If you weight 105,51kg, it'll be 10551
-    ) public {
+    function theWeighing(uint _weightAfter) public {
         uint _idAfter = peopleAfterCount + 1;
-        address payable _contestantAfter = payable(msg.sender);
+        address payable _competitorAfter = payable(msg.sender);
         peopleWeighted[peopleAfterCount] = PersonWeighed(
             _idAfter,
             _weightAfter,
-            _contestantAfter
+            _competitorAfter
         );
         incrementAfterCount();
-    }
-
-    //// fallback
-    //// external
-    //// public
-    function getBalance() public view returns (uint) {
-        return address(this).balance;
     }
 
     //// internal
@@ -80,8 +55,13 @@ contract HungerGames {
         peopleAfterCount += 1;
     }
 
-    //// private
-    //// view / pure
+    function getContestantweightLoss() public view returns (uint) {
+        return people[msg.sender(_weight)];
+    }
+
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
+    }
 }
 
 /*  @param: Explain some param here.
