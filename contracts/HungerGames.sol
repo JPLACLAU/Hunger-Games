@@ -44,11 +44,15 @@ contract HungerGames {
     //// fallback
     //// external
     //// public
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
+    }
 
     //// internal
     function incrementCount() internal {
         peopleCount += 1;
     }
+
     //// private
     //// view / pure
 }
