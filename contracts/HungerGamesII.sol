@@ -9,20 +9,28 @@ pragma solidity ^0.8.17;
  */
 
 contract HungerGames {
+    mapping(address => uint) public startingweights;
+    mapping(address => uint) public lostweights;
 
-
-    mapping(address => Startingweight) public startingweights;
-
-    function addStartingweight(uint Startingweight) public {
-        startingweights[msg.sender] = uint Startingweight;
+    function addStartingweight(uint _startingweight) public {
+        startingweights[msg.sender] = _startingweight;
     }
 
-    function getStartingweight() public view return (uint) {
+    function getStartingweight() public view returns (uint) {
         return startingweights[msg.sender];
-
     }
 
+    function addendingweight(uint _endingweight) public {
+        uint startingweight = startingweights[msg.sender];
 
+        uint lostweight = startingweight - _endingweight;
+
+        lostweights[msg.sender] = lostweight;
+    }
+
+    function getlostweight() public view returns (uint) {
+        return lostweights[msg.sender];
+    }
 }
 
 /*  @param: Explain some param here.
