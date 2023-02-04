@@ -215,7 +215,8 @@ Project Link: [https://github.com/JPLACLAU/Hunger-Games](https://github.com/JPLA
 
 Thank you so much to.. no one yet! Be the first to collab!
 
--   [No one yet](https://no-one.com)
+-   [user "elisma" from Discord Solidity-Latam](https://discord.gg/ugW9q3m3YW)
+-   [No one else yet](https://no-one.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
