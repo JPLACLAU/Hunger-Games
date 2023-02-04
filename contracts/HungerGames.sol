@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
-// 1. Pragma
+
 pragma solidity ^0.8.17;
 
-// 2. Imports
-// 3. Interfaces, Libraries, Contracts
 /* @title: "Hunger Games Smart Contract"
  * @author: "Jean-Paul Laclau"
  * @notice: "A contest between friends to loose weight"
@@ -46,7 +44,6 @@ contract HungerGames {
         incrementAfterCount();
     }
 
-    //// internal
     function incrementCount() internal {
         peopleCount += 1;
     }
