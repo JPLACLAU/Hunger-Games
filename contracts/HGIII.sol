@@ -12,6 +12,7 @@ contract HungerGames {
     struct Person {
         uint _weight;
         uint _weightLost;
+        bool _winner; //tengo que ver lo que aprendi en cz
     }
     mapping(address => Person) public people;
 
