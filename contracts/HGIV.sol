@@ -11,14 +11,15 @@ pragma solidity ^0.8.17;
 contract HungerGames {
     struct Person {
         uint _weight;
-        uint _weightLost;
+        uint _weightLost; // this value is stored for accounting purposes.
     }
     mapping(address => Person) public people;
 
     address public _winnerAddress;
     uint public _winnerWeightLost;
 
-    function addPerson(uint _weight) public {
+    function addPerson(uint _weight) public payable {
+        require(msg.value == 1000000000000000000);
         people[msg.sender] = Person(_weight, 0);
     }
 
@@ -33,7 +34,9 @@ contract HungerGames {
             _winnerWeightLost = _weightLost;
             _winnerAddress = msg.sender;
         }
+    }
 
-        // winner.push(Winner(msg.sender, _weightLost)); //this function not working for now
+    function prizeForWinner() public payable {
+        payable(_winnerAddress).transfer(address(this).balance);
     }
 }

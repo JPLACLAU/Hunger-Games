@@ -147,7 +147,7 @@ _For more examples, please refer to the [Documentation](https://github.com/JPLAC
 ## Features Roadmap
 
 -   [x] Start the proyect
--   [ ]
+-   [x] First version of the smart contract is ready with basic functionality
 -   [ ] Add additional stuff
 -   [ ] Make the front-end beautiful.
 -   [ ] Add moar stuff

@@ -1,59 +1,43 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.17;
 
 /* @title: "Hunger Games Smart Contract"
  * @author: "Jean-Paul Laclau"
  * @notice: "A contest between friends to loose weight"
  * @dev: "The person who lost more weight will win the funds in the contract"
+ * ALSO: this is another way of executing the original idea, it is a mix of "elisma" sugestions with new optimizing gas ideas.
  */
+
 contract HungerGames {
-    uint public peopleCount = 0;
-    uint public peopleAfterCount = 0;
-
-    mapping(uint => Person) public people;
     struct Person {
-        uint _id;
         uint _weight;
-        address payable _competitor;
+        uint _weightLost; // this value is stored for accounting purposes.
     }
+    mapping(address => Person) public people;
 
-    mapping(uint => PersonWeighed) public peopleWeighted;
-    struct PersonWeighed {
-        uint _idAfter;
-        uint _weightAfter;
-        address payable _competitorAfter;
-    }
+    address public _winnerAddress;
+    uint public _winnerWeightLost;
 
     function addPerson(uint _weight) public payable {
         require(msg.value == 1000000000000000000);
-        uint _id = peopleCount + 1;
-        address payable _competitor = payable(msg.sender);
-        people[peopleCount] = Person(_id, _weight, _competitor);
-        incrementCount();
+        people[msg.sender] = Person(_weight, 0);
     }
 
     function theWeighing(uint _weightAfter) public {
-        uint _idAfter = peopleAfterCount + 1;
-        address payable _competitorAfter = payable(msg.sender);
-        peopleWeighted[peopleAfterCount] = PersonWeighed(
-            _idAfter,
-            _weightAfter,
-            _competitorAfter
-        );
-        incrementAfterCount();
+        uint weightL = people[msg.sender]._weight - _weightAfter;
+        people[msg.sender]._weightLost = weightL;
+        isWinner(weightL);
     }
 
-    function incrementCount() internal {
-        peopleCount += 1;
+    function isWinner(uint _weightLost) internal {
+        if (_winnerWeightLost < _weightLost) {
+            _winnerWeightLost = _weightLost;
+            _winnerAddress = msg.sender;
+        }
     }
 
-    function incrementAfterCount() internal {
-        peopleAfterCount += 1;
-    }
-
-    function getContestantweightLoss() public view returns (uint) {
-        return people[msg.sender(_weight)];
+    function prizeForWinner() public payable {
+        payable(_winnerAddress).transfer(address(this).balance);
     }
 
     function getBalance() public view returns (uint) {
