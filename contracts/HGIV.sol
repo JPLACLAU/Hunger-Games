@@ -11,15 +11,12 @@ pragma solidity ^0.8.17;
 contract HungerGames {
     struct Person {
         uint _weight;
-        uint _weightlost;
+        uint _weightLost;
     }
     mapping(address => Person) public people;
 
-    struct Winner {
-        address _winnerAddress;
-        uint _weightlost;
-    }
-    Winner[1] public winner;
+    address public _winnerAddress;
+    uint public _winnerWeightLost;
 
     function addPerson(uint _weight) public {
         people[msg.sender] = Person(_weight, 0);
@@ -32,9 +29,10 @@ contract HungerGames {
     }
 
     function isWinner(uint _weightLost) public {
-        require(winner[Winner._weightLost] < _weightLost);
-
-        winner.push(Winner(msg.sender, _weightLost));
+        if (_winnerWeightLost < _weightLost) {
+            _winnerWeightLost = _weightLost;
+            _winnerAddress = msg.sender;
+        }
 
         // winner.push(Winner(msg.sender, _weightLost)); //this function not working for now
     }
