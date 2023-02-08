@@ -23,12 +23,12 @@ contract HungerGames {
     }
 
     function theWeighing(uint _weightAfter) public {
-        people[msg.sender]._weightLost =
-            people[msg.sender]._weight -
-            _weightAfter;
+        uint weightL = people[msg.sender]._weight - _weightAfter;
+        people[msg.sender]._weightLost = weightL;
+        isWinner(weightL);
     }
 
-    function isWinner(uint _weightLost) public {
+    function isWinner(uint _weightLost) internal {
         if (_winnerWeightLost < _weightLost) {
             _winnerWeightLost = _weightLost;
             _winnerAddress = msg.sender;
