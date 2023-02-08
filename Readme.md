@@ -160,10 +160,11 @@ See the [open issues](https://github.com/JPLACLAU/Hunger-Games/issues) for a ful
 
 ## ChangeLog & Versions Roadmap
 
-Current version: `0.2.0`
+Current version: `0.2.1`
 
 | Version | Changes                                                                                                                                                                                                           |
 | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `0.2.2` | Some checks added                                                                                                                                                                                                 |
 | `0.2.1` | Adding withdraw                                                                                                                                                                                                   |
 | `0.2.0` | weight comparations and winner selection works.                                                                                                                                                                   |
 | `0.1.1` | there has been some progress, but I am stuck and I had to ask a question at: https://ethereum.stackexchange.com/questions/144223/how-to-compare-two-values-of-structs-of-the-same-msg-sender-from-different-mappi |
